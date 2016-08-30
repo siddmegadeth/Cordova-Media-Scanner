@@ -1,5 +1,5 @@
 
-app.service('Media',['$q','$rootScope',function ($q,$rootScope) {
+angular.module("cordova.file.media",[]).service('Media',['$q','$rootScope',function ($q,$rootScope) {
 
 	//var permission =undefined;
 	
