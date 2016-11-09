@@ -31,46 +31,58 @@ To call the Media Scanner.
               "file:///storage/emulated/0/",
               "file:///mnt/sdcard/"
               ];
-              
-    fileType = ["mp3","ogg","wav"];              
-    
-     Media.permission(function(resp)
-     {
+   
+    fileType = ["mp3"];              
+
+    function permissionRespfunction(resp)
+    {
       if(resp=="GRANTED")
       {
          //load Loader
          var respArray =[];
          var file = Media.scan(url,fileType);
-         
+
             file.then(function(resp)
             {
+              
+              
               if(resp.length!=0)
               {
-  
+                log("Before Removing Duplicates");
+                log(resp);
                 $scope.fileScan = Media.removeDuplicates(resp,"name");  //remove duplicaes based on Name
+                log("After Removing Duplicates");
+                log($scope.fileScan);
               }
-          
+              else
+              {
+                log("No Media Found...Please Scan Again");
+                Media.permission();
+              }
+
             });
-      }
-      else if(resp=="NOT_REQUESTED")
-      {
-        Media.permission();
-      }
-      else if(resp=="DENIED")
-      {
-        Media.permission();
-      }
-      else if(resp=="DENIED_ALWAYS")
-      {
-         Media.permission();
-      }
-      else if(resp=="DENIED_ALWAYS")
-      {
-         Media.permission();    
-      }
+          }
+          else if(resp=="NOT_REQUESTED")
+          {
+  Media.permission(permissionRespfunction);  //Func Ends
+          }
+          else if(resp=="DENIED")
+          {
+  Media.permission(permissionRespfunction);  //Func Ends
+          }
+          else if(resp=="DENIED_ALWAYS")
+          {
+  Media.permission(permissionRespfunction);  //Func Ends
+          }
+          else if(resp=="DENIED_ALWAYS")
+          {
+  Media.permission(permissionRespfunction);  //Func Ends
+          }
 
-     });  //Func Ends
-
+     }
+    
+  
+  Media.permission(permissionRespfunction);  //Func Ends
 
 
 ```
