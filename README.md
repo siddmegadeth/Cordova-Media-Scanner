@@ -29,14 +29,7 @@ To call the Media Scanner.
 ```sh
     var url =   [
               "file:///storage/emulated/0/",
-              "file:///mnt/sdcard/",
-              "file:///sdcard/",
-              cordova.file.dataDirectory,
-              cordova.file.externalApplicationStorageDirectory,
-              cordova.file.externalCacheDirectory,
-              cordova.file.externalRootDirectory,
-              cordova.file.externalDataDirectory,
-              "file:///storage/emulated/0/"
+              "file:///mnt/sdcard/"
               ];
               
     fileType = ["mp3","ogg","wav"];              
