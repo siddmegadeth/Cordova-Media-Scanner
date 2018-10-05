@@ -96,7 +96,7 @@ To call the Media Scanner.
  
 
 # Suggestion
-If you have any suggestion please feel free to ping me. Please file a bug report if you have some so that i can make it more future proof and fault tolerance. 
+If you have any suggestion please feel free to ping me. Please file a bug report if you have some so that i can make it more future proof and fault tolerance.  Work under dev for Angular 4/6
 
 # License
 This is for the people. MIT. 
